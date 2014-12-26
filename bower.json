@@ -1,0 +1,30 @@
+{
+  "name": "Gulp Start",
+  "version": "0.0.1",
+  "authors": [
+    "Adrian Florescu <florescuadyz@yahoo.com>"
+  ],
+  "description": "Gulp Start with PHP",
+  "main": "index.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "picturefill": "~2.2.0",
+    "ladda": "~0.9.4",
+    "classy-clearfix": "~0.1.1",
+    "animate.css": "~3.2.0"
+  }
+}

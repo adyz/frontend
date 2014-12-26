@@ -1,0 +1,11 @@
+body {
+  background: #ccc;
+  background: -webkit-gradient(linear, left top, left bottom, from(red), to(blue));
+  background: -webkit-linear-gradient(red, blue);
+  background: linear-gradient(red, blue);
+  /* Standard syntax */
+  height: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.css.map */

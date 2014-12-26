@@ -1,0 +1,32 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "Gulp Start",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Adrian Florescu",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "browser-sync": "^1.8.2",
+    "browserify": "^7.0.3",
+    "compass": "^0.1.0",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-compass": "^2.0.3",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rev": "^2.0.1",
+    "gulp-sass": "^1.2.4",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-uglify": "^1.0.2",
+    "gulp-usemin": "^0.3.8",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "dependencies": {
+    "wiredep": "^2.2.2"
+  }
+}
