@@ -18,7 +18,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('browser-sync', function () {
     browserSync({
-        proxy: "http://www.portfolio.dev/"
+        proxy: "http://www.frontend.dev/"
     });
 });
 
