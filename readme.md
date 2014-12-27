@@ -3,7 +3,7 @@
 ##Description
 I am a front-end developer and often enough I use PHP & MySQL to build mockups and prototyes.
 
-I've build this project/repository/tool to help me have a front-end boilerplate simmilar with Codekit & Prepros, but having the configuration open to the developers, shareable and platform independent.
+I've built this project/repository/tool to help me have a front-end boilerplate similar with Codekit & Prepros, but having the configuration open to the developers, shareable and platform independent.
 
 
 
@@ -11,7 +11,7 @@ I've build this project/repository/tool to help me have a front-end boilerplate 
 1. Live Reload & Sync with BrowserSync + Server Proxy for PHP or any other server type
 2. SCSS/SASS + Compass + Autoprefixer
 3. Browserify to build your JS dependencies
-4. Bower and PHP includes of Bower dependecies 
+4. Bower and PHP includes of Bower dependencies 
 
 ##Setup
 1. Create virtual host and modify the name in the gulpfile 
