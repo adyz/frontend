@@ -86,17 +86,6 @@ gulp.task('usemin', function () {
 
 
 /*
- * Serve and Build
- */
-
-gulp.task('serveme', ['sass', 'bower', 'usemin', 'javascript', 'browser-sync'], function () {
-    gulp.watch("public/src/scss/*.scss", ['sass']);
-    gulp.watch("public/src/js/*.js", ['javascript', browserSync.reload]);
-    gulp.watch("resources/**/**/*.php", ['sass', browserSync.reload]);
-});
-
-
-/*
  * Use Browserify to minify the custom JS files
  */
 
@@ -128,3 +117,14 @@ var getBundleName = function () {
     //return version + '.' + name + '.' + 'min';
     return 'all'
 };
+
+
+/*
+ * Serve and Build
+ */
+
+gulp.task('serveme', ['sass', 'bower', 'usemin', 'javascript', 'browser-sync'], function () {
+    gulp.watch("public/src/scss/*.scss", ['sass']);
+    gulp.watch("public/src/js/*.js", ['javascript', browserSync.reload]);
+    gulp.watch("resources/**/**/*.php", ['sass', browserSync.reload]);
+});
