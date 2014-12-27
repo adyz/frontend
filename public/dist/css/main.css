@@ -1,9 +1,5 @@
 body {
-  background: #ccc;
-  background: -webkit-gradient(linear, left top, left bottom, from(red), to(green));
-  background: -webkit-linear-gradient(red, green);
-  background: linear-gradient(red, green);
-  /* Standard syntax */
+  background: #eee;
   height: 100%;
 }
 

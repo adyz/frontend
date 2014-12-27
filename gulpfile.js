@@ -14,7 +14,11 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
+var filter = require('gulp-filter');
 
+/*
+ * Tell BrowserSync that you want to use a custom server
+ */
 
 gulp.task('browser-sync', function () {
     browserSync({
@@ -22,8 +26,12 @@ gulp.task('browser-sync', function () {
     });
 });
 
-// Sass task, will run when any SCSS files change & BrowserSync
-// will auto-update browsers
+
+/*
+ * Sass task, will run when any SCSS files change & BrowserSync
+ * will auto-update browsers
+ */
+
 gulp.task('sass', function () {
     return gulp.src('public/src/scss/*.scss')
         .pipe(plumber({
@@ -44,22 +52,27 @@ gulp.task('sass', function () {
         }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('public/dist/css/'))
+        .pipe(filter('**/*.css')) // Filtering stream to only css files
         .pipe(reload({stream: true}));
 });
 
 
-// Default task to be run with `gulp`
-gulp.task('default', ['sass', 'browser-sync'], function () {
-    gulp.watch("public/src/scss/*.scss", ['sass']);
-});
+/*
+ * Look for bower tags and add it's resources there with wiredep
+ */
 
 gulp.task('bower', function () {
     gulp.src('resources/bower/src/*.php')
-        .pipe(wiredep({
-        }))
+        .pipe(wiredep({}))
         .pipe(gulp.dest('resources/bower/dist'));
 });
 
+
+
+/*
+ * Look for bower resources, minify them and add the source location
+ * in the files
+ */
 
 gulp.task('usemin', function () {
     gulp.src('resources/bower/dist/*.php')
@@ -71,24 +84,21 @@ gulp.task('usemin', function () {
         .pipe(gulp.dest('resources/parts'));
 });
 
-// BowerMe
-gulp.task('bowerme', ['bower', 'usemin'], function () {
 
-});
+/*
+ * Serve and Build
+ */
 
-// Serve and Build
 gulp.task('serveme', ['sass', 'bower', 'usemin', 'javascript', 'browser-sync'], function () {
     gulp.watch("public/src/scss/*.scss", ['sass']);
     gulp.watch("public/src/js/*.js", ['javascript', browserSync.reload]);
     gulp.watch("resources/**/**/*.php", ['sass', browserSync.reload]);
 });
 
-var getBundleName = function () {
-    //var version = require('./package.json').version;
-    //var name = require('./package.json').name;
-    //return version + '.' + name + '.' + 'min';
-    return 'all'
-};
+
+/*
+ * Use Browserify to minify the custom JS files
+ */
 
 gulp.task('javascript', function () {
 
@@ -111,3 +121,10 @@ gulp.task('javascript', function () {
 
     return bundle();
 });
+
+var getBundleName = function () {
+    //var version = require('./package.json').version;
+    //var name = require('./package.json').name;
+    //return version + '.' + name + '.' + 'min';
+    return 'all'
+};
